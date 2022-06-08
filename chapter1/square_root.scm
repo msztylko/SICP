@@ -3,8 +3,12 @@
 (define (average a b)
     (/ (+ a b) 2))
 
+; better implementation
 (define (good-enough? guess x)
-    (< (abs (- (square guess) x)) 0.001))
+    (= (improve guess x) guess))
+
+;(define (good-enough? guess x)
+;    (< (abs (- (square guess) x)) 0.001))
 
 (define (improve guess x)
     (average guess (/ x guess)))
@@ -20,3 +24,10 @@
 
 (define a (sqrt 2))
 (display a)
+(display "\n")
+(define b (sqrt 1000000000000))
+(display b)
+(display "\n")
+(define c (sqrt 0.00000000000000000009))
+(display c)
+(display "\n")
