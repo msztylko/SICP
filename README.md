@@ -60,4 +60,4 @@ def factorial3(n):
 * iterative process - no self-reference in the function definition, use of "looping construct" (while)
 * iterative process - state summarized by fixed number of state variables
 
-More exploration in [processes.ipynb](./chapter1/processes.ipynb)
+More exploration in [processes.ipynb](./chapter1/processes.ipynb) and similar functions in [Scheme](./chapter1/processes.scm)
