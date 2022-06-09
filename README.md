@@ -13,7 +13,7 @@ For using Scheme in Jupyter Notebook I've used [Calysto Scheme](https://github.c
 
 Great explanation of recursive procedures vs recursive processes, illustrated with factorial function. 
 
-## Recursive procedure, recursive process
+### Recursive procedure, recursive process
 
 ```python
 def factorial1(n):
@@ -26,7 +26,7 @@ def factorial1(n):
 * recursive procedure - factorial1 calls itself in the definition
 * recursive process - chain of deferred operations, interpreter keeps track of operations to be performed later
 
-## Recursive procedure, iterative process
+### Recursive procedure, iterative process
 
 ```python
 def factorial2(n):
@@ -42,7 +42,7 @@ def factorial2(n):
 * recursive procedure - factorial calls itself in the definition
 * iterative process - state can be summarized by state variables (product, counter, max_count) that we pass from one state to the next
 
-## Iterative procedure, iterative process
+### Iterative procedure, iterative process
 
 ```python
 def factorial3(n):
