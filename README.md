@@ -64,7 +64,7 @@ def factorial3(n):
 * iterative process - no self-reference in the function definition, use of "looping construct" (while)
 * iterative process - state summarized by fixed number of state variables
 
-More exploration in [processes.ipynb](./chapter1/processes.ipynb) and similar functions in [Scheme](./chapter1/processes.scm)
+More exploration in [processes.ipynb](./chapter1/ch1.2/processes.ipynb) and similar functions in [Scheme](./chapter1/ch1.2/processes.scm)
 
 ### Fibonacci numbers example
 
@@ -90,4 +90,4 @@ Iterative process
     (fib-iter 1 0 n))
 ```
 
-Files with the same example [fibonacci.scm](./chapter1/fibonacci.scm) and [fibonacci.py](./chapter1/fibonacci.py)
+Files with the same example [fibonacci.scm](./chapter1/ch1.2/fibonacci.scm) and [fibonacci.py](./chapter1/ch1.2/fibonacci.py)
