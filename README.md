@@ -1,6 +1,10 @@
 # SICP
 notes from reading Structure and Interpretation of Computer Programs
 
+<p align="center">
+<img src="https://github.com/msztylko/SICP/blob/master/docs/wizard.jpeg" data-canonical- width="400" height="300" align="center" />
+</p>
+
 ## Scheme Installation
 To run Scheme interpreter on Mac M1 with ARM silicon the best tool I've found is [Gambit Scheme](https://gambitscheme.org/) as it's readily available on Homebrew. To install it, simply run `brew install gambit-scheme`
 
