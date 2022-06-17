@@ -91,3 +91,71 @@ Iterative process
 ```
 
 Files with the same example [fibonacci.scm](./chapter1/ch1.2/fibonacci.scm) and [fibonacci.py](./chapter1/ch1.2/fibonacci.py)
+
+## [Formulating Abstractions with Higher-Order Procedures](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-4.html#%_toc_%_sec_1.3)
+
+Many similar procedures like:
+
+```scheme
+(define (sum-integers a b)
+    (if (> a b)
+    0
+    (+ a (sum-integers (+ a 1) b))))
+    
+(define (sum-cubes a b)
+    (if (> a b)
+    0
+    (+ (cube a) (sum-cubes (+ a 1) b))))
+```
+
+can be defined in terms of the pattern they share:
+
+```scheme
+(define (sum term a next b)
+    (if (> a b)
+        0
+        (+ (term a)
+           (sum term (next a) next b))))      
+```
+
+Procedure for summing cubes can now be rewritten as:
+
+```scheme
+(define (sum-cubes a b)
+    (sum cube a inc b))
+    
+(define (inc n) (+ n 1))
+```
+
+However, `sum` procedure is only one example of this class of functions. Another example:
+
+```scheme
+(define (product term a next b)
+    (if (> a b)
+        1
+        (* (term a)
+           (product term (next a) next b))))
+```
+
+Here, we can again see many similarities between these prodecures. In the same way as `sum-integers` and `sum-cubes` are just special cases of a more general procedure `sum`, `sum` and `product` can be viewed as special cases of a more general procedure `accumulate`:
+
+```scheme
+(define (accumulate combiner null-value term a next b)
+  (if (> a b)
+      null-value
+      (combiner (term a)
+                (accumulate combiner null-value term (next a) next b))))
+```
+See [ex1.32](./chapter1/ch1.3/ex1.32.scm) for comaprison of recursive and iterative `accumulate`
+
+Defining procedure as a special cases of some more abstract (higher-order) procedure is possible thanks to **first-class functions**.
+
+Once we have higher-order function that operate on other procedures we frequently need to define smaller, helper procedures like:
+```scheme
+(define (inc n) (+ n 1))
+```
+It's not very convenient to create a new procedure for simplest operations like increment and that's why **anonymous procedures** become useful:
+```scheme
+(lambda (n) (+ n 1))
+```
+
