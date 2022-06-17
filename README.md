@@ -137,7 +137,7 @@ However, `sum` procedure is only one example of this class of functions. Another
            (product term (next a) next b))))
 ```
 
-Here, we can again see many similarities between these prodecures. In the same way as `sum-integers` and `sum-cubes` are just special cases of a more general procedure `sum`, `sum` and `product` can be viewed as special cases of a more general procedure `accumulate`:
+Here, we can again see many similarities between these procedures. In the same way as `sum-integers` and `sum-cubes` are just special cases of a more general procedure `sum`, `sum` and `product` can be viewed as special cases of a more general procedure `accumulate`:
 
 ```scheme
 (define (accumulate combiner null-value term a next b)
