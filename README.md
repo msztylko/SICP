@@ -5,6 +5,11 @@ notes from reading Structure and Interpretation of Computer Programs
 <img src="https://github.com/msztylko/SICP/blob/master/docs/wizard.jpeg" data-canonical- width="400" height="300" align="center" />
 </p>
 
+Other useful materials helpful in exploration of [elegant weapons](https://xkcd.com/297/):
+ - [Brian Harvey’s SICP lectures](https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter)
+ - [Programming Languages Virtual Meetup SICP](https://www.youtube.com/watch?v=oA-FdE3KV88&list=PLVFrD1dmDdvdvWFK8brOVNL7bKHpE-9w0)
+ - [Lambda? You Keep Using that Letter - Kevlin Henney](https://www.youtube.com/watch?v=Y7StjYhXvpE)
+
 ## Scheme Installation
 To run Scheme interpreter on Mac M1 with ARM silicon the best tool I've found is [Gambit Scheme](https://gambitscheme.org/) as it's readily available on Homebrew. To install it, simply run `brew install gambit-scheme`
 
