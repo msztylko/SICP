@@ -198,3 +198,41 @@ We can implement such behaviour without any data structures, only using prodecur
 ```
 
 **Data** can be implemented in terms of **procedures**. 
+
+Similar example in Python:
+
+```python
+# pairs as data
+
+def cons_d(x, y):
+    return (x, y)
+
+def car_d(pair):
+    return pair[0]
+
+def cdr_d(pair):
+    return pair[1]
+```
+
+```python
+# pairs as procedures
+
+def cons_p(x, y):
+    def dispatch(m):
+        if m == 0:
+            return x
+        elif m == 1:
+            return y
+        else:
+            raise ValueError()
+
+    return dispatch
+
+def car_p(pair):
+    return pair(0)
+
+def cdr_p(pair):
+    return pair(1)
+```
+
+Examples of usage: [pairs.py](./chapter2/ch2.1/pairs.py)
