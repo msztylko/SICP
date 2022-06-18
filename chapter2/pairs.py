@@ -1,15 +1,20 @@
 # pairs as data
 
+
 def cons_d(x, y):
     return (x, y)
+
 
 def car_d(pair):
     return pair[0]
 
+
 def cdr_d(pair):
     return pair[1]
 
+
 # pairs as procedures
+
 
 def cons_p(x, y):
     def dispatch(m):
@@ -19,10 +24,13 @@ def cons_p(x, y):
             return y
         else:
             raise ValueError()
+
     return dispatch
+
 
 def car_p(pair):
     return pair(0)
+
 
 def cdr_p(pair):
     return pair(1)
@@ -52,5 +60,5 @@ def test():
     assert cdr_p(cdr_p(cdr_p(d))) == 4
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()
