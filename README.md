@@ -164,3 +164,37 @@ It's not very convenient to create a new procedure for simplest operations like 
 (lambda (n) (+ n 1))
 ```
 
+## [What Is Meant by Data?](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-14.html#%_sec_2.1.3)
+
+Data can be defined in terms of its behaviour specified by constructor (`make-rational`) and selectors (`nominator`, `denominator`):
+
+```scheme
+(define x (make-rational n d))
+
+(= (/ (numer x) (denom x)) (/ n d))
+```
+
+in a simlar way we can define `cons`, `car` and `cdr` by its behaviour:
+
+```scheme
+(define z (cons x y))
+(= (car z) x)
+(= (cdr z) y)
+```
+
+We can implement such behaviour without any data structures, only using prodecures:
+
+```scheme
+(define (cons x y)
+  (define (dispatch m)
+    (cond ((= m 0) x)
+          ((= m 1) y)
+          (else (error "Argument not 0 or 1 -- CONS" m))))
+  dispatch)
+
+(define (car z) (z 0))
+
+(define (cdr z) (z 1))
+```
+
+**Data** can be implemented in terms of **procedures**. 
