@@ -303,7 +303,7 @@ We can define these underlying operations and think about program as a flow of "
             (accumulate op initial (cdr sequence)))))
 ```
 
-We these operations defined `sum-odd-squares` and `even-fibs` can be reformulate as signal flow.
+With these operations defined `sum-odd-squares` and `even-fibs` can be reformulate as signal flow.
 
 ```scheme
 (define (sum-odd-squares tree)
