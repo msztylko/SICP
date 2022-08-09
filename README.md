@@ -324,3 +324,6 @@ With these operations defined `sum-odd-squares` and `even-fibs` can be reformula
 ## Eval/Apply - first encounter
 
 Not exactly `eval` and `apply` functions from Scheme, but something very similar was used to implement [calculator interpreter](https://github.com/msztylko/calculators#alternative-approach).
+
+## Abstract Data
+Separate [README](./chapter2/ch2.4/README.md) for the exploration of this topic. 
