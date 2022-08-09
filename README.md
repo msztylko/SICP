@@ -327,3 +327,25 @@ Not exactly `eval` and `apply` functions from Scheme, but something very similar
 
 ## Abstract Data
 Separate [README](./chapter2/ch2.4/README.md) for the exploration of this topic. 
+
+## [Message Passing](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-4.html#%_toc_%_sec_3.1.1)
+
+First example of this technique was shown in section [What Is Meant by Data?](https://github.com/msztylko/SICP#what-is-meant-by-data), where `cons` pair was coded as a dispatch procedure. In a similar way, we can create "object" to represent a bank account that is again implemented as a dispatch procedure.
+
+```scheme
+(define (make-account balance)
+  (define (withdraw amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount))
+               balance)
+        "Insufficient funds"))
+  (define (deposit amount)
+    (set! balance (+ balance amount))
+    balance)
+  (define (dispatch m)
+    (cond ((eq? m 'withdraw) withdraw)
+          ((eq? m 'deposit) deposit)
+          (else (error "Unknown request -- MAKE-ACCOUNT"
+                       m))))
+  dispatch)
+```
