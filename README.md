@@ -349,3 +349,7 @@ First example of this technique was shown in section [What Is Meant by Data?](ht
                        m))))
   dispatch)
 ```
+
+## The Environment Model of Evaluation
+
+Great chapter full of drawings and great explanations of how Scheme is actually evaluated. Go read it directly from the book.
