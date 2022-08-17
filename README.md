@@ -353,3 +353,49 @@ First example of this technique was shown in section [What Is Meant by Data?](ht
 ## The Environment Model of Evaluation
 
 Great chapter full of drawings and great explanations of how Scheme is actually evaluated. Go read it directly from the book.
+
+## Mutation is just assignment
+
+As we know from [What Is Meant by Data?](https://github.com/msztylko/SICP#what-is-meant-by-data), pairs can be represented purely in terms of procedures:
+
+```scheme
+(define (cons x y)
+  (define (dispatch m)
+    (cond ((eq? m 'car) x)
+          ((eq? m 'cdr) y)
+          (else (error "Undefined operation: CONS" m))))
+  dispatch)
+  
+(define (car z) (z 'car))
+(define (cdr z) (z 'cdr))
+```
+
+We can construct mutable data in a similar way.
+
+```scheme
+(define (cons x y)
+  (define (set-x! v) (set! x v))
+  (define (set-y! v) (set! y v))
+  (define (dispatch m)
+    (cond ((eq? m 'car) x)
+          ((eq? m 'cdr) y)
+          ((eq? m 'set-car!) set-x!)
+          ((eq? m 'set-cdr!) set-y!)
+          (else
+            (error "Undefined operation: CONS" m))))
+  dispatch)
+  
+(define (car z) (z 'car))
+(define (cdr z) (z 'cdr))
+(define (set-car! z new-value)
+  ((z 'set-car!) new-value) z)
+(define (set-cdr! z new-value)
+  ((z 'set-cdr!) new-value) z)
+```
+
+The book has a great comment on that:
+> Assignment is all that is needed, theoretically, to account for the behavior of mutable data. As soon as we admit set! to our language, we raise
+all the issues, not only of assignment, but of mutable data in general.
+> On the other hand, from the viewpoint of implementation, assignment requires us
+to modify the environment, which is itself a mutable data structure. Thus, assignment
+and mutation are equipotent: Each can be implemented in terms of the other.
