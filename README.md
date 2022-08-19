@@ -399,3 +399,5 @@ all the issues, not only of assignment, but of mutable data in general.
 > On the other hand, from the viewpoint of implementation, assignment requires us
 to modify the environment, which is itself a mutable data structure. Thus, assignment
 and mutation are equipotent: Each can be implemented in terms of the other.
+
+Full [Scheme implementation](./chapter3/ch3.3/mutable.scm) can be compared with [Python implementation](./chapter3/ch3.3/mutable.py).
