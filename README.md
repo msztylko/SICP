@@ -401,3 +401,12 @@ to modify the environment, which is itself a mutable data structure. Thus, assig
 and mutation are equipotent: Each can be implemented in terms of the other.
 
 Full [Scheme implementation](./chapter3/ch3.3/mutable.scm) can be compared with [Python implementation](./chapter3/ch3.3/mutable.py).
+
+## Concurrency, time, and communication
+
+Not too many practical insights about concurrency, but a very interesting comment:
+> The basic phenomenon here is that synchronizing different processes, establishing shared state, or imposing an order on events requires communication among the processes. In essence, any notion of
+time in concurrency control must be intimately tied to communication. It is intriguing that a similar connection between time and communication also arises in the Theory of Relativity, where the speed of
+light (the fastest signal that can be used to synchronize events) is a
+fundamental constant relating time and space. The complexities we encounter in dealing with time and state in our computational models may
+in fact mirror a fundamental complexity of the physical universe.
